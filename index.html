@@ -1,8 +1,13 @@
+
+
+
+Code 1132 - some nav issues
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cambridge Fractional</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -21,19 +26,16 @@
 </head>
 <body class="bg-[#F8F6F3] text-[#425b76]">
 
-<!-- Header -->
+<!-- Unified Header -->
 <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
   <div class="max-w-6xl mx-auto px-6 flex justify-between items-center h-16">
-    <!-- Site Name -->
-    <a href="#top" class="text-lg font-bold text-[#425b76]">Cambridge Fractional</a>
-
-    <!-- Hamburger Icon -->
-    <button id="menu-toggle" class="md:hidden focus:outline-none" aria-label="Toggle navigation menu">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
+    <!-- Logo -->
+    <a href="#top" class="flex items-center space-x-3">
+      <img src="https://raw.githubusercontent.com/bobsbadgers/logo/1a8dfdcad07c6018685b0c6841c5d5eae0e873dc/CFWebLogo.png" 
+           alt="Logo" 
+           class="h-10 w-auto" />
+      <span class="text-lg font-bold text-[#425b76] hidden sm:inline">Cambridge Fractional</span>
+    </a>
 
     <!-- Desktop Nav -->
     <nav class="hidden md:flex items-center space-x-6 font-medium text-sm text-[#425b76]">
@@ -45,24 +47,31 @@
         Get in Touch
       </a>
     </nav>
+
+    <!-- Hamburger Icon for Mobile -->
+    <button id="menu-toggle" class="md:hidden focus:outline-none">
+      <svg class="w-6 h-6 text-[#425b76]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
   </div>
 
-  <!-- Mobile Dropdown Menu -->
-  <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 bg-white">
-    <a href="#about" class="block py-2 hover:text-[#8fa37a] transition">About Us</a>
-    <a href="#services" class="block py-2 hover:text-[#8fa37a] transition">What We Do</a>
-    <a href="#why" class="block py-2 hover:text-[#8fa37a] transition">Why Choose Us</a>
-    <a href="#founder" class="block py-2 hover:text-[#8fa37a] transition">Our Founder</a>
-    <a href="#contact" class="block mt-2 py-2 bg-[#8fa37a] text-white rounded-full text-center hover:scale-105 transition">
+  <!-- Mobile Nav -->
+  <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 bg-white shadow-md">
+    <a href="#about" class="block py-2 text-[#425b76] hover:text-[#8fa37a]">About Us</a>
+    <a href="#services" class="block py-2 text-[#425b76] hover:text-[#8fa37a]">What We Do</a>
+    <a href="#why" class="block py-2 text-[#425b76] hover:text-[#8fa37a]">Why Choose Us</a>
+    <a href="#founder" class="block py-2 text-[#425b76] hover:text-[#8fa37a]">Our Founder</a>
+    <a href="#contact" class="block mt-3 px-4 py-2 bg-[#8fa37a] text-white rounded-full text-center hover:scale-105 transition">
       Get in Touch
     </a>
   </div>
 </header>
 
 <!-- Hero Section -->
-<section id="top" class="pt-20 min-h-screen flex flex-col justify-center items-center text-center px-6 bg-[#425b76] text-white relative overflow-hidden">
-  <img src="https://raw.githubusercontent.com/bobsbadgers/logo/1a8dfdcad07c6018685b0c6841c5d5eae0e873dc/CFWebLogo.png" alt="Cambridge Fractional Logo" class="mb-6 max-h-80 w-auto object-contain fade-up">
-  <h1 class="text-5xl md:text-7xl font-bold leading-tight max-w-3xl fade-up">
+<section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-[#425b76] text-white relative overflow-hidden">
+<img src="https://raw.githubusercontent.com/bobsbadgers/logo/1a8dfdcad07c6018685b0c6841c5d5eae0e873dc/CFWebLogo.png" alt="Cambridge Fractional Logo" class="mb-6 max-h-80 w-auto object-contain fade-up">  <h1 class="text-5xl md:text-7xl font-bold leading-tight max-w-3xl fade-up">
     Operations expertise when you need it.
   </h1>
   <p class="text-xl mt-6 max-w-2xl text-white/80 fade-up">
@@ -96,6 +105,7 @@
   <div class="max-w-6xl mx-auto">
     <h2 class="text-5xl font-semibold mb-16 fade-up">What We Do.</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-14">
+      <!-- Repeatable Service Block -->
       <div class="fade-up">
         <div class="border-t border-[#ccc] mb-6"></div>
         <h3 class="text-2xl font-semibold mb-2 text-[#425b76]">Strategic Planning</h3>
@@ -125,37 +135,38 @@
 <section id="why" class="py-24 px-6 bg-white">
   <h2 class="text-5xl font-semibold mb-14 fade-up text-left max-w-6xl mx-auto">Why Choose Cambridge Fractional?</h2>
   <div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto text-left">
+    <!-- Repeatable Card -->
     <div class="p-8 bg-[#F8F6F3] rounded-2xl shadow-md hover:shadow-lg transition fade-up">
       <div class="mb-4">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#8fa37a]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7" />
         </svg>
       </div>
-      <h3 class="text-xl font-semibold mb-2 text-[#425b76]">Experienced Leadership</h3>
+      <h3 class="text-xl font-semibold mb-3">Proven Expertise</h3>
       <p class="text-[#425b76]/80 leading-relaxed">
-        Over 20 years delivering operational excellence across sectors.
+        Led large global teams and aligned operations with strategic goals in world-class organisations.
+      </p>
+    </div>
+    <div class="p-8 bg-[#F8F6F3] rounded-2xl shadow-md hover:shadow-lg transition fade-up">
+      <div class="mb-4">
+           <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#8fa37a]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c1.657 0 3-1.343 3-3S13.657 2 12 2 9 3.343 9 5s1.343 3 3 3zm0 2c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z" />
+        </svg>
+      </div>
+      <h3 class="text-xl font-semibold mb-3">Tailored to You</h3>
+      <p class="text-[#425b76]/80 leading-relaxed">
+        Every business is different. We customise our solutions to match your unique needs and challenges.
       </p>
     </div>
     <div class="p-8 bg-[#F8F6F3] rounded-2xl shadow-md hover:shadow-lg transition fade-up">
       <div class="mb-4">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#8fa37a]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 10h16M4 14h10M4 18h6" />
         </svg>
       </div>
-      <h3 class="text-xl font-semibold mb-2 text-[#425b76]">Tailored Solutions</h3>
+      <h3 class="text-xl font-semibold mb-3">Flexible & Scalable</h3>
       <p class="text-[#425b76]/80 leading-relaxed">
-        Customized operational strategies aligned with your business goals.
-      </p>
-    </div>
-    <div class="p-8 bg-[#F8F6F3] rounded-2xl shadow-md hover:shadow-lg transition fade-up">
-      <div class="mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#8fa37a]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7" />
-        </svg>
-      </div>
-      <h3 class="text-xl font-semibold mb-2 text-[#425b76]">Flexible Engagements</h3>
-      <p class="text-[#425b76]/80 leading-relaxed">
-        Fractional and interim leadership when you need it most.
+        Access top-tier operational support when you need it—scale up or down without the overhead.
       </p>
     </div>
   </div>
@@ -163,60 +174,76 @@
 
 <!-- Founder Section -->
 <section id="founder" class="py-24 bg-[#F8F6F3] text-center">
-  <div class="fade-up mb-10">
-    <h2 class="text-5xl font-semibold text-[#425b76] mb-6">Our Founder.</h2>
-  </div>
-  <div class="flex flex-col md:flex-row items-center gap-10 max-w-5xl mx-auto px-6">
-    <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg" alt="Founder Portrait" class="rounded-3xl shadow-lg w-64 mx-auto md:mx-0 object-cover" />
-    <div class="text-left text-[#425b76] text-lg leading-relaxed">
-      <p class="mb-6">
-        Jane Smith brings 20+ years of operational leadership experience across global enterprises and high-growth startups.
-      </p>
-      <p>
-        She specializes in strategic planning, operational transformation, and executive coaching — helping businesses scale with confidence.
-      </p>
+  <h2 class="text-5xl font-semibold text-[#425b76] mb-14 fade-up">Our Founder.</h2>
+  <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-lg p-12 flex flex-col md:flex-row items-center gap-10 fade-up">
+    <img src="https://raw.githubusercontent.com/bobsbadgers/logo/072defd45aba484d8174369e0f162b178fd77521/Portrait.png" alt="Gareth" class="w-48 h-48 rounded-2xl object-cover flex-shrink-0" />
+    <div class="text-left text-[#425b76]">
+      <p class="text-lg leading-relaxed mb-4">
+Gareth is a strategic and operational leader with over 20 years of experience driving efficiency, governance, and business transformation. Most recently, as Director of Operations & Governance at Arm, he led global initiatives to optimise operations and support significant business growth.      </p>
+      <p class="text-lg leading-relaxed">
+Before joining Arm, Gareth oversaw the production of examination materials for learners in over 160 countries at the University of Cambridge. He also held senior leadership roles in London’s policing, spearheading key operational improvements and strategic initiatives.      </p>
     </div>
   </div>
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="py-24 bg-white text-center">
-  <h2 class="text-5xl font-semibold text-[#425b76] mb-12 fade-up">Get In Touch.</h2>
-  <form class="max-w-lg mx-auto space-y-6 text-left fade-up">
-    <div>
-      <label for="name" class="block text-[#425b76] font-semibold mb-1">Name</label>
-      <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-[#ccc] focus:outline-none focus:ring-2 focus:ring-[#8fa37a]" />
+<section id="contact" class="py-20 px-6 bg-white text-left">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-10">
+    <div class="md:w-2/3 bg-[#F8F6F3] rounded-2xl shadow-lg p-10 fade-up">
+      <h2 class="text-5xl font-semibold mb-8">Get in Touch</h2>
+      <form action="https://formspree.io/f/mqaqokvo" method="POST" class="space-y-6">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#8fa37a]" />
+        <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#8fa37a]" />
+        <textarea name="message" rows="5" placeholder="Your Message" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#8fa37a]"></textarea>
+        <button type="submit" class="px-6 py-2.5 bg-[#8fa37a] text-white font-medium rounded-full hover:scale-105 transition transform duration-300 text-base">
+          Send Message
+        </button>
+      </form>
     </div>
-    <div>
-      <label for="email" class="block text-[#425b76] font-semibold mb-1">Email</label>
-      <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-[#ccc] focus:outline-none focus:ring-2 focus:ring-[#8fa37a]" />
+    <div class="flex flex-col justify-between md:w-1/3 h-full fade-up">
+      <div class="space-y-4">
+        <a href="https://www.linkedin.com/company/cambridgefractional" target="_blank" class="block px-5 py-2.5 bg-[#425b76] text-white font-medium rounded-full hover:scale-105 transition text-center">
+          Connect on LinkedIn
+        </a>
+        <a href="mailto:hello@cambridgefractional.com" class="block px-5 py-2.5 bg-[#425b76] text-white font-medium rounded-full hover:scale-105 transition text-center">
+          Email Us
+        </a>
+      </div>
+      <div class="mt-6 w-full aspect-[4/3] md:aspect-auto md:h-full">
+        <img src="https://raw.githubusercontent.com/bobsbadgers/logo/e998b3b6effc39dc47e2ae3f631b6c76e05aefe5/pexels-ivan-drazic-20457695-14267767.jpg" alt="Team working" class="rounded-2xl shadow-lg w-full h-full object-cover" />
+      </div>
     </div>
-    <div>
-      <label for="message" class="block text-[#425b76] font-semibold mb-1">Message</label>
-      <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 rounded-lg border border-[#ccc] focus:outline-none focus:ring-2 focus:ring-[#8fa37a]"></textarea>
-    </div>
-    <button type="submit" class="w-full bg-[#8fa37a] text-white py-3 rounded-full font-semibold hover:scale-105 transition">
-      Send Message
-    </button>
-  </form>
+  </div>
 </section>
 
 <!-- Footer -->
-<footer class="bg-[#425b76] text-white py-8 text-center">
-  <div class="max-w-6xl mx-auto px-6">
-    <p>&copy; 2025 Cambridge Fractional. All rights reserved.</p>
+<footer class="bg-[#425b76] text-white py-6 text-sm">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col items-center text-center space-y-3">
+    
+    <!-- Centered Logo -->
+    <img 
+      src="https://raw.githubusercontent.com/bobsbadgers/logo/1a8dfdcad07c6018685b0c6841c5d5eae0e873dc/CFWebLogo.png" 
+      alt="Cambridge Fractional Logo" 
+      class="w-48 h-auto object-contain fade-up" 
+    />
+
+    <!-- Centered Company Info -->
+    <div class="text-[#F8F6F3]/80 space-y-2 fade-up">
+      <p>Cambridge Fractional Limited · Company No. 16222409</p>
+      <p>Registered Office: 9 Caxton House, Broad Street, Cambridge, CB23 6JN</p>
+      <p class="mt-4">© 2025 Cambridge Fractional</p>
+    </div>
+    
   </div>
 </footer>
-
 <script>
-  // Mobile menu toggle
-  const menuToggle = document.getElementById('menu-toggle');
+  const toggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
 
-  menuToggle.addEventListener('click', () => {
+  toggle.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
   });
 </script>
-
 </body>
 </html>
+
