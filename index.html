@@ -127,7 +127,7 @@
 <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm" role="banner">
   <div class="max-w-6xl mx-auto px-6 flex justify-between items-center h-16">
     <!-- Site Name Only -->
-    <a href="#main-content" class="text-sm md:text-lg font-bold text-[#425b76] hidden sm:inline" aria-label="Cambridge Fractional - Go to top">
+    <a href="#" class="text-sm md:text-lg font-bold text-[#425b76] hidden sm:inline" aria-label="Cambridge Fractional - Go to top">
       Cambridge Fractional
     </a>
 
@@ -469,8 +469,20 @@
       });
     }
 
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    // Custom scroll to top function for header link
+    const headerLogo = document.querySelector('a[href="#"]');
+    if (headerLogo) {
+      headerLogo.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // Smooth scrolling for other anchor links
+    document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(function(anchor) {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
